@@ -9,7 +9,7 @@ spring:
    datasource:
         url: jdbc:mysql://localhost:3306/db_example
         username: root
-        password: maanganj
+        password: mypassword
  
 eureka:
   client:
