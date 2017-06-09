@@ -1,0 +1,286 @@
+
+The masala of this directory is in the renamed dir repos_anandoned. Because we are abandoning the main memory database which required the external jar to be put in the repo directory following the particular process.
+
+As to the stuff below, you might ignore this in this context.
+
+1. Trying docker on pivotal
+
+https://docs.pivotal.io/pivotalcf/1-9/adminguide/docker.html
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04
+
+srranjan@yahoo.com/<commonOne> with 3 embellishments
+2. AWS for docker
+
+http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Java.html
+
+
+http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_dockerpreconfig.walkthrough.html
+
+http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/java-getstarted.html
+Date: April 19, 2017
+
+
+gangjala1234@gmail.com/<commonOne> with 2 embellishments.
+
+3. Bluemix
+Date: April 19, 2017
+gangjala1234@gmail.com/<commonOne> with 3 embellishments
+
+4. Trying my first app on beanstalk
+
+https://aws.amazon.com/blogs/devops/deploying-a-spring-boot-application-on-aws-using-aws-elastic-beanstalk/
+
+The spring boot data rest sample
+
+Sample-env-2  Environment ID: e-egyayqx9yf, URL: Sample-env-2.vgxhrn7dpz.us-east-1.elasticbeanstalk.com 
+
+curl http://localhost:8080
+
+SERVER_PORT = 5000
+ 
+curl -X GET -i http://Sample-env-2.vgxhrn7dpz.us-east-1.elasticbeanstalk.com 
+
+Trying to create RDB gangjala1234 <commonOne>
+
+db.t1.micro
+
+Creating RDS database named: aa1ls7a1e8mnp7p. This may take a few minutes.
+
+DB endpoint:
+aa1ls7a1e8mnp7p.cjx6x8kohokz.us-east-1.rds.amazonaws.com ( View in RDS Console )
+Port:
+3306
+
+DB Instance: aa1ls7a1e8mnp7p
+
+
+RDS_DB_NAME – The name of the database. Elastic Beanstalk sets this to ebdb.
+RDS_USERNAME – The username that you enter when you add the database to your environment.
+RDS_PASSWORD – The password that you enter when you add the database to your environment.
+RDS_HOSTNAME – The DNS name of the DB instance.
+RDS_PORT – The port used by the database engine that you select when you add the database to your environment.
+
+Let me guess:
+
+RDS_DB_NAME – ebdb.
+RDS_USERNAME – gangjala1234
+RDS_PASSWORD – password 
+RDS_HOSTNAME – aa1ls7a1e8mnp7p.cjx6x8kohokz.us-east-1.rds.amazonaws.com
+RDS_PORT – 3306
+
+Testing:
+curl -X GET -i http://Sample-env-2.vgxhrn7dpz.us-east-1.elasticbeanstalk.com  worked
+
+curl -X POST -H "Content-Type: application/json" -d '{ "firstName": "Ontak", "lastName": "Doe" }' http://Sample-env-2.vgxhrn7dpz.us-east-1.elasticbeanstalk.com  
+
+In order for the above to work, I had to replace ' with " and I also replaced all inner " with \". Then the above and the below worked like a sweety.
+curl http://Sample-env-2.vgxhrn7dpz.us-east-1.elasticbeanstalk.com/people
+curl http://Sample-env-2.vgxhrn7dpz.us-east-1.elasticbeanstalk.com/people/1
+
+
+
+
+SPRING_DATASOURCE_URL=jdbc:mysql://aa1ls7a1e8mnp7p.cjx6x8kohokz.us-east-1.rds.amazonaws.com/ebdb
+SPRING_DATASOURCE_USERNAME=gangjala1234
+SPRING_DATASOURCE_PASSWORD=password
+SPRING_JPA_HIBERNATE_DDL_AUTO=update
+SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.MySQL5Dialect
+
+5. Enter docker
+
+http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_docker.container.console.html
+
+http://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth
+
+
+http://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html
+
+
+https://console.aws.amazon.com/ecs/home?region=us-east-1#/repositories
+
+https://console.aws.amazon.com/ecs/home?region=us-east-1#/repositories/create/new
+
+Repository Name: firstone/myrepos
+
+Repository URI 962184960948.dkr.ecr.us-east-1.amazonaws.com/firstone/myrepos
+
+Sign Up for AWS
+
+Create an IAM User
+
+Install the AWS CLI
+
+[
+Important Best Practice:
+You can create access keys for your AWS account to access the command line interface or API. However, we don't recommend that you access 
+AWS using the credentials for your AWS account; we recommend that you use AWS Identity and Access Management (IAM) instead. 
+Create an IAM user, and then add the user to an IAM group with administrative permissions or and grant this user administrative permissions. 
+You can then access AWS using a special URL and the credentials for the IAM user.
+
+If you signed up for AWS but have not created an IAM user for yourself, you can create one using the IAM console.
+]
+
+https://console.aws.amazon.com/iam/
+
+https://962184960948.signin.aws.amazon.com/console
+
+User Name: Administrator
+
+Group name: 
+
+Users with AWS Management Console access can sign-in at: https://962184960948.signin.aws.amazon.com/console
+
+https://962184960948.signin.aws.amazon.com/console
+
+On first login as Administrator, changed the password from password01 to <commonOne> without any embellishments.
+
+
+
+{
+org.codehaus.jackson
+}
+
+
+http://www.baeldung.com/spring-httpmessageconverter-rest?utm_source=email-newsletter&utm_medium=email&utm_campaign=auto_18_spring&tl_inbound=1&tl_target_all=1&tl_period_type=3
+
+
+{
+
+
+Kafka
+
+bin\zookeeper-server-start etc\zookeeper-server-start
+
+
+
+}
+{
+Some detailed documentation:
+
+https://cloud.spring.io/spring-cloud-config/spring-cloud-config.html
+
+https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html
+
+http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
+
+
+
+https://redislabs.com/ebook/appendix-a/a-3-installing-on-windows/a-3-2-installing-redis-on-window/
+
+
+For installing on linux, can try this:
+
+https://redis.io/download
+
+The first on windows from here
+https://redislabs.com/ebook/appendix-a/a-3-installing-on-windows/a-3-2-installing-redis-on-window/
+
+
+
+
+The second cloned from 
+https://github.com/MSOpenTech/redis.git
+at \unzipped\redis
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
